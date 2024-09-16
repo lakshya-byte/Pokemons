@@ -1,0 +1,50 @@
+/* Search Wrapper */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  position: relative;
+  width: 100%;
+}
+
+/* Search Input */
+#pokemon-name-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  font-size: 1.1rem;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* Placeholder Text Style */
+#pokemon-name-search::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Focus Effect */
+#pokemon-name-search:focus {
+  border-color: #6a11cb;
+  background-color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Input Hover Effect */
+#pokemon-name-search:hover {
+  background-color: #e5e5e5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #pokemon-name-search {
+    max-width: 300px;
+    font-size: 1rem;
+  }
+}

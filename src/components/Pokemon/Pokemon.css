@@ -1,0 +1,84 @@
+/* Pokemon Card Wrapper */
+.pokemon {
+   background-color: white;
+   border-radius: 15px;
+   overflow: hidden;
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   text-align: center;
+   margin: 10px;
+   cursor: pointer;
+   position: relative;
+ }
+ 
+ .pokemon:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+ }
+ 
+ .pokemon a {
+   text-decoration: none;
+   color: inherit;
+ }
+ 
+ .pokemon-name {
+   background-color: #6a11cb;
+   background-image: linear-gradient(315deg, #6a11cb 0%, #2575fc 74%);
+   color: white;
+   font-size: 1.5rem;
+   font-weight: bold;
+   padding: 10px 0;
+   text-transform: capitalize;
+ }
+ 
+ .pokemon-name:hover {
+   background-image: linear-gradient(315deg, #2575fc 0%, #6a11cb 74%);
+ }
+ 
+ .pokemon-image {
+   width: 150px;
+   height: 150px;
+   object-fit: cover;
+   padding: 15px;
+   transition: transform 0.3s ease;
+ }
+ 
+ .pokemon:hover .pokemon-image {
+   transform: scale(1.1);
+ }
+ 
+ /* Adding a subtle gradient border on hover */
+ .pokemon::before {
+   content: "";
+   position: absolute;
+   top: -4px;
+   left: -4px;
+   right: -4px;
+   bottom: -4px;
+   background: linear-gradient(135deg, #6a11cb, #2575fc);
+   z-index: -1;
+   opacity: 0;
+   border-radius: 20px;
+   transition: opacity 0.4s ease;
+ }
+ 
+ .pokemon:hover::before {
+   opacity: 1;
+ }
+ 
+ /* Mobile Responsiveness */
+ @media (max-width: 768px) {
+   .pokemon {
+     margin: 20px 0;
+   }
+ 
+   .pokemon-image {
+     width: 120px;
+     height: 120px;
+   }
+ 
+   .pokemon-name {
+     font-size: 1.2rem;
+   }
+ }
+ 
