@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 :root {
   /* Spacing */
   --space-1: 0.25rem;
@@ -6,6 +8,19 @@
   --space-4: 1rem;
   --space-5: 1.5rem;
   --space-6: 2rem;
+
+  /* Typography */
+  --font-base: 'Inter', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+  --size-base: 1rem;
+  --line-height-base: 1.5;
+  --letter-spacing-base: 0.02em;
+  --size-heading-1: 2.25rem;
+  --size-heading-2: 1.75rem;
+  --size-heading-3: 1.5rem;
+  --size-heading-4: 1.25rem;
+  --size-heading-5: 1rem;
+  --size-heading-6: 0.875rem;
 
   /* Light mode colors */
   --color-bg: #ffffff;
@@ -41,13 +56,39 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+/* Body typography */
 body {
   margin: 0;
   padding: 0;
   background-color: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.5;
+  line-height: var(--line-height-base);
   overflow-x: hidden; /* prevent horizontal overflow */
+  font-family: var(--font-base);
+  font-size: var(--size-base);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+/* Headings */
+h1 { font-size: var(--size-heading-1); font-weight: 600; }
+h2 { font-size: var(--size-heading-2); font-weight: 600; }
+h3 { font-size: var(--size-heading-3); font-weight: 600; }
+h4 { font-size: var(--size-heading-4); font-weight: 600; }
+h5 { font-size: var(--size-heading-5); font-weight: 600; }
+h6 { font-size: var(--size-heading-6); font-weight: 600; }
+
+/* Paragraphs */
+p { margin-bottom: var(--space-3); }
+
+/* Form elements */
+input,
+textarea,
+button {
+  font-family: var(--font-base);
+  font-size: var(--size-base);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-base);
 }
 
 /* Layout containers */
