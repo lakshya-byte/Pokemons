@@ -105,50 +105,100 @@ function PokemonDetails() {
   }
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: "rgba(0,0,0,0.5)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex: 1000,
-      }}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="pokemon-details-title"
-      aria-describedby="pokemon-details-description"
-      tabIndex="-1"
-      ref={modalRef}
-    >
-      <div className="pokemon-details-wrapper">
-        <div className="pokemon-details-name">
-          <h2 id="pokemon-details-title">Name: {pokemon?.name}</h2>
-        </div>
-        <div className="pokemon-details-image">
-          <img src={pokemon?.image} alt={pokemon?.name} />
-        </div>
-        <div>
-          <div>
-            <h3>Weight: {pokemon?.weight}</h3>
+    <>
+      <style>{`
+        .pokemon-details-image img {
+          max-width: 100%;
+          height: auto;
+        }
+        .pokemon-details-stats {
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin: 20px 0;
+        }
+        .pokemon-details-stats > div {
+          flex: 1 1 150px;
+          text-align: center;
+        }
+        .pokemon-details-types {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+        }
+        @media (max-width: 768px) {
+          .pokemon-details-name h2 {
+            font-size: 1.6rem;
+          }
+          .pokemon-details-wrapper h3 {
+            font-size: 1rem;
+          }
+          .pokemon-details-types div {
+            font-size: 0.8rem;
+            padding: 8px 12px;
+          }
+        }
+        @media (max-width: 480px) {
+          .pokemon-details-name h2 {
+            font-size: 1.4rem;
+          }
+          .pokemon-details-wrapper h3 {
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+          }
+          .pokemon-details-types div {
+            font-size: 0.7rem;
+            padding: 6px 10px;
+          }
+        }
+      `}</style>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(0,0,0,0.5)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 1000,
+        }}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="pokemon-details-title"
+        aria-describedby="pokemon-details-description"
+        tabIndex="-1"
+        ref={modalRef}
+      >
+        <div className="pokemon-details-wrapper">
+          <div className="pokemon-details-name">
+            <h2 id="pokemon-details-title">Name: {pokemon?.name}</h2>
           </div>
-          <div>
-            <h3>Height: {pokemon?.height}</h3>
+          <div className="pokemon-details-image">
+            <img src={pokemon?.image} alt={pokemon?.name} />
           </div>
-        </div>
-        <div className="pokemon-details-types" id="pokemon-details-description">
-          {pokemon?.types?.map((t) => (
-            <div key={t}>
-              {t.type ? t.type.name : t}
+          <div className="pokemon-details-stats">
+            <div>
+              <h3>Weight: {pokemon?.weight}</h3>
             </div>
-          ))}
+            <div>
+              <h3>Height: {pokemon?.height}</h3>
+            </div>
+          </div>
+          <div className="pokemon-details-types" id="pokemon-details-description">
+            {pokemon?.types?.map((t) => (
+              <div key={t}>
+                {t.type ? t.type.name : t}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

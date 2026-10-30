@@ -37,6 +37,12 @@ function Search() {
           clearTimeout(timeoutRef.current);
           timeoutRef.current = setTimeout(() => setLoading(false), 500);
         }}
+        style={{
+          width: '100%',
+          minHeight: '44px',
+          padding: '14px 24px',
+          fontSize: '1.2rem',
+        }}
       />
     </div>
   );
