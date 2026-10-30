@@ -138,3 +138,18 @@ button {
 @media (min-width: 992px) {
   .container { padding: calc(var(--space-4) * 4); }
 }
+
+/* App container */
+.app-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* App container heading */
+.app-container h1 {
+  font-size: var(--size-heading-1);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
