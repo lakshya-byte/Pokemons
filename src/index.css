@@ -1,0 +1,99 @@
+:root {
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  /* Light mode colors */
+  --color-bg: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-primary: #0066cc;
+  --color-primary-text: #ffffff;
+  --color-text: #212529;
+  --color-muted: #6c757d;
+  --color-border: #dee2e6;
+  --color-error: #dc3545;
+  --color-success: #28a745;
+
+  /* Dark mode colors */
+  --color-bg-dark: #121212;
+  --color-surface-dark: #1e1e1e;
+  --color-text-dark: #e0e0e0;
+  --color-muted-dark: #a0a0a0;
+  --color-border-dark: #333333;
+}
+
+/* Dark mode theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-bg-dark);
+    --color-surface: var(--color-surface-dark);
+    --color-text: var(--color-text-dark);
+    --color-muted: var(--color-muted-dark);
+    --color-border: var(--color-border-dark);
+  }
+}
+
+/* Base reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  overflow-x: hidden; /* prevent horizontal overflow */
+}
+
+/* Layout containers */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--space-4);
+}
+.row {
+  display: flex;
+  gap: var(--space-3);
+}
+.col {
+  flex: 1 1 0;
+}
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--space-2);
+  padding: var(--space-4);
+  overflow: hidden;
+}
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Overflow handling */
+.scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Ensure sufficient contrast */
+.text-lg {
+  font-size: 1.125rem;
+  color: var(--color-text);
+}
+
+/* Responsive breakpoints */
+@media (min-width: 576px) {
+  .container { padding: calc(var(--space-4) * 2); }
+}
+@media (min-width: 768px) {
+  .container { padding: calc(var(--space-4) * 3); }
+}
+@media (min-width: 992px) {
+  .container { padding: calc(var(--space-4) * 4); }
+}
