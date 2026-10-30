@@ -1,13 +1,12 @@
 import CustomRoutes from './routes/CustomRoutes'
-// import Search from './Search/Search'
 
 function App() {
-
   return (
-   <>
-    <CustomRoutes/>
-   </>
-  )
+    <div className="app-container">
+      <h1>Pokédex</h1>
+      <CustomRoutes />
+    </div>
+  );
 }
 
 export default App
